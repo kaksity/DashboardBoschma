@@ -43,17 +43,12 @@ class EnrollmentUploadJob implements ShouldQueue
      */
     public function handle()
     {
-        try {
-            $spreadsheet = IOFactory::load($this->path);
-            $sheet        = $spreadsheet->getActiveSheet();
-            $rowLimit    = $sheet->getHighestDataRow();
-            $columnLimit = $sheet->getHighestDataColumn();
-            $rowRange    = range(2, $rowLimit);
-            $columnRange = range('F', $columnLimit);
+        $spreadsheet = IOFactory::load($this->path);
+        $sheet        = $spreadsheet->getActiveSheet();
+        $rowLimit    = $sheet->getHighestDataRow();
+        $rowRange    = range(0, $rowLimit);
 
-            $data = array();
-
-            DB::beginTransaction();
+        DB::transaction(function () use ($sheet, $rowRange) {
             foreach ($rowRange as $row) {
                 $this->enrollmentRepositoryInterface->createEnrollmentRecord([
                     'full_name' => $sheet->getCell('A' . $row)->getValue(),
@@ -67,8 +62,6 @@ class EnrollmentUploadJob implements ShouldQueue
                     'phone_number' => '0'.$sheet->getCell('I' . $row)->getValue(),
                 ]);
             }
-            DB::commit();
-        } catch (PhpSpreadSheetException $e) {
-        }
+        });
     }
 }
