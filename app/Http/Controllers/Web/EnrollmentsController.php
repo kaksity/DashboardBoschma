@@ -49,7 +49,7 @@ class EnrollmentsController extends Controller
         $path = $request->file->storeAs('public/uploads', $fileNameToStore);
 
         $path = storage_path("app/{$path}");
-        dispatch(new EnrollmentUploadJob($this->enrollmentRepositoryInterface, $path));
+        dispatch(new EnrollmentUploadJob($this->enrollmentRepositoryInterface, $path))->delay(10);
 
 
         return back()->with(
