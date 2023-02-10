@@ -69,12 +69,6 @@ class EnrollmentUploadJob implements ShouldQueue
             }
             DB::commit();
         } catch (PhpSpreadSheetException $e) {
-            DB::rollBack();
-            $user = auth()->user();
-            Mail::to($user->email)->later(now()->addSeconds(5), new FailedJobMail([
-                'user' => $user
-            ]));
-            echo $e;
         }
     }
 }
