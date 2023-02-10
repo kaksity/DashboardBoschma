@@ -57,14 +57,14 @@ class EnrollmentUploadJob implements ShouldQueue
             foreach ($rowRange as $row) {
                 $this->enrollmentRepositoryInterface->createEnrollmentRecord([
                     'full_name' => $sheet->getCell('A' . $row)->getValue(),
-                    'date_of_birth' => $sheet->getCell('B' . $row)->getValue(),
+                    'date_of_birth' => $sheet->getCell('B' . $row)->getFormattedValue(),
                     'lga' => $sheet->getCell('C' . $row)->getValue(),
                     'ward' => $sheet->getCell('D' . $row)->getValue(),
                     'marital_status' => $sheet->getCell('E' . $row)->getValue(),
                     'gender' => $sheet->getCell('F' . $row)->getValue(),
                     'facility' => $sheet->getCell('G' . $row)->getValue(),
                     'category' => $sheet->getCell('H' . $row)->getValue(),
-                    'phone_number' => $sheet->getCell('I' . $row)->getValue(),
+                    'phone_number' => '0'.$sheet->getCell('I' . $row)->getValue(),
                 ]);
             }
             DB::commit();
