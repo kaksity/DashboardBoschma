@@ -93,7 +93,8 @@ if (request()->getHost() === 'dashboard.boschma.bo.gov.ng') {
 }
 if (request()->getHost() === 'public.boschma.bo.gov.ng') {
     Route::get('/', function () {
-        return redirect()->route('website.home');
+        return "Root";
+        //return redirect()->route('website.home');
     });
     Route::group(['prefix' => 'public'], function () {
         Route::get('/', function () {
