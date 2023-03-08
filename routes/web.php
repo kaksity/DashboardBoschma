@@ -91,10 +91,7 @@ if (request()->getHost() === 'dashboard.boschma.bo.gov.ng') {
         });
     });
 } else {
-    Route::get('/', function () {
-        return redirect()->route('website.home');
-    });
-    Route::group(['prefix' => 'public'], function () {
+    //Route::group(['prefix' => 'public'], function () {
 
         Route::get('/', [HomeController::class, 'index'])->name('website.home');
         Route::get('/about-us', [AboutUsController::class, 'index'])->name('website.about-us');
@@ -112,5 +109,5 @@ if (request()->getHost() === 'dashboard.boschma.bo.gov.ng') {
             ])->name('website.networks.healthcare-providers');
             Route::get('/mdas', [NetworksController::class, 'showMDAs'])->name('website.networks.mdas');
         });
-    });
+    //});
 }
