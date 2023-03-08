@@ -95,7 +95,10 @@ if (request()->getHost() === 'dashboard.boschma.bo.gov.ng') {
         return redirect()->route('website.home');
     });
     Route::group(['prefix' => 'public'], function () {
-        Route::get('/', [HomeController::class, 'index'])->name('website.home');
+        Route::get('/', function () {
+            return redirect()->route('website.home');
+        });
+        Route::get('/home', [HomeController::class, 'index'])->name('website.home');
         Route::get('/about-us', [AboutUsController::class, 'index'])->name('website.about-us');
         Route::get('/contact-us', [ContactUsController::class, 'index'])->name('website.contact-us');
         Route::post('/contact-us', [ContactUsController::class, 'store']);
