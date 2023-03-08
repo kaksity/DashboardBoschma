@@ -27,6 +27,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 if (request()->getHost() === 'dashboard.boschma.bo.gov.ng') {
+    Route::get('/', function () {
+        return redirect()->route('webapp.dashboards.index');
+    });
+
     Route::group(['prefix' => 'app'], function () {
         Route::get('/', function () {
             return redirect()->route('webapp.dashboards.index');
@@ -87,6 +91,9 @@ if (request()->getHost() === 'dashboard.boschma.bo.gov.ng') {
         });
     });
 } else {
+    Route::get('/', function () {
+        return redirect()->route('website.home');
+    });
     Route::group(['prefix' => 'public'], function () {
 
         Route::get('/', [HomeController::class, 'index'])->name('website.home');
