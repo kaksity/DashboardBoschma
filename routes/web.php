@@ -90,7 +90,7 @@ if (request()->getHost() === 'dashboard.boschma.bo.gov.ng') {
             Route::post('/change-password', [ChangePasswordController::class, 'store'])->middleware('auth');
         });
     });
-} else {
+} elseif (request()->getHost() === 'public.boschma.bo.gov.ng') {
     Route::get('/', function () {
         return redirect()->route('website.home');
     });
