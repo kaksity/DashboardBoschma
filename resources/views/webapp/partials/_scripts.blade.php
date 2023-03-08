@@ -10,3 +10,4 @@
 <script src="/app/assets/js/main.js"></script>
 <script src="/app/assets/js/dashboards-analytics.js"></script>
 <script async defer src="https://buttons.github.io/buttons.js"></script>
+<script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>

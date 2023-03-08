@@ -11,3 +11,4 @@
 <link rel="stylesheet" href="/app/assets/css/demo.css" />
 <link rel="stylesheet" href="/app/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 <link rel="stylesheet" href="/app/assets/vendor/libs/apex-charts/apex-charts.css" />
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">

@@ -4,7 +4,7 @@ namespace App\Http\Requests\Web\News;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateNewsRequest extends FormRequest
+class EditNewsRequest extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.
@@ -19,7 +19,6 @@ class CreateNewsRequest extends FormRequest
             'content' => ['required', 'string', 'between:10,1000']
         ];
     }
-
     public function messages()
     {
         return [

@@ -20,6 +20,9 @@
               <td>{{ $message->full_name}}</td>
               <td>{{ $message->email_address }}</td>
               <td>{{ $message->subject }}</td>
+              <td>
+                <a href="{{ route('webapp.messages.show', [$message->id]) }}" class="btn btn-primary">View</a>
+              </td>
             </tr>
           @endforeach
         </tbody>

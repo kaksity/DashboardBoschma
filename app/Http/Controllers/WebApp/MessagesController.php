@@ -17,7 +17,7 @@ class MessagesController extends Controller
     {
         $messages = $this->messageRepositoryInterface->getMessagesFiltered($request->safe()->all());
 
-        return view('webapp.messages.index', [
+        return view('webapp.messages.list', [
             'messages' => $messages
         ]);
     }
@@ -26,7 +26,7 @@ class MessagesController extends Controller
     {
         $message = $this->messageRepositoryInterface->getMessageById($id);
         if (is_null($message)) {
-            return redirect()->route('webapp.dashboards.index');
+            return redirect()->route('webapp.messages.index');
         }
 
         return view('webapp.messages.detail', [

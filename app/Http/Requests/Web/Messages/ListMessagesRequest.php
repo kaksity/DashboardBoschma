@@ -14,7 +14,7 @@ class ListMessagesRequest extends FormRequest
     public function rules()
     {
         return [
-            'per_page' => ['required', 'integer', 'max:1000']
+            'per_page' => ['integer', 'max:1000']
         ];
     }
 }

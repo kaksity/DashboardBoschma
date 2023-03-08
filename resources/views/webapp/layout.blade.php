@@ -33,5 +33,6 @@
       <div class="layout-overlay layout-menu-toggle"></div>
     </div>
     @include('webapp.partials._scripts')
+    @yield('editor-script')
   </body>
 </html>
