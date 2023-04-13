@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group(['prefix' => 'app'], function () {
+Route::domain('app.boschma.bo.gov.ng')->group(function () {
     Route::get('/', function () {
         return redirect()->route('webapp.dashboards.index');
     });
@@ -85,7 +85,7 @@ Route::group(['prefix' => 'app'], function () {
         Route::post('/change-password', [ChangePasswordController::class, 'store'])->middleware('auth');
     });
 });
-Route::group(['prefix' => 'public'], function () {
+Route::group([], function () {
     Route::get('/', function () {
         return redirect()->route('website.home');
     });
