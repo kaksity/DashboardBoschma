@@ -192,13 +192,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-sm-12">
-                <video width="100%" height="300" controls>
-                    <source
-                        src="https://d21ozv67drxbfu.cloudfront.net/appietoday.test/media/2017/09/04/asset-1175875-1504515710530864.mp4"
-                        type="video/mp4">
-                    <source src="movie.ogg" type="video/ogg">
-                    Error while loading Video...
-                </video>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/2-omN0Bl1qM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
 
             <div class="col-md-6 col-sm-12">
