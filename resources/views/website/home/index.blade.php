@@ -167,21 +167,21 @@
         <div class="four col-md-3 p-3">
             <div class="counter-box wow fadeInUp" data-wow-delay="0.3s">
                 <i class="fas fa-child"></i>
-                <span class="counter timer count-title count-number" data-to="34850" data-speed="2000">34850</span>
+                <span class="counter timer count-title count-number" data-to="34850" data-speed="2000">118445+</span>
                 <p>BHCPF Beneficiaries</p>
             </div>
         </div>
         <div class="four col-md-3 p-3">
             <div class="counter-box wow fadeInUp" data-wow-delay="0.3s">
                 <i class="fas fa-hospital-alt"></i>
-                <span class="counter timer count-title count-number" data-to="232" data-speed="2000">232+</span>
+                <span class="counter timer count-title count-number" data-to="232" data-speed="2000">246+</span>
                 <p>Healthcare Providers</p>
             </div>
         </div>
         <div class="four col-md-3 p-3">
             <div class="counter-box wow fadeInUp" data-wow-delay="0.3s">
                 <i class="fas fa-user-nurse"></i>
-                <span class="counter timer count-title count-number" data-to="52637" data-speed="2000">52637+</span>
+                <span class="counter timer count-title count-number" data-to="52637" data-speed="2000">136232+</span>
                 <p>Lives Impacted</p>
             </div>
         </div>
