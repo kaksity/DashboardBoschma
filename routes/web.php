@@ -27,8 +27,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Route::domain('app.boschma.bo.gov.ng')->group(function () {
-Route::group(['prefix' => 'admin'],function () {
+Route::domain('app.boschma.bo.gov.ng')->group(function () {
     Route::get('/', function () {
         return redirect()->route('webapp.dashboards.index');
     });
