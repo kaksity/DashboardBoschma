@@ -75,6 +75,19 @@
           </li>
         </ul>
       </li>
+      <li class="menu-item">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+          <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
+          <div data-i18n="Authentications">Website</div>
+        </a>
+        <ul class="menu-sub">
+          <li class="menu-item">
+            <a href="{{ route('webapp.website.number-of-impacts.index') }}" class="menu-link">
+              <div data-i18n="Basic">Number of Impacts</div>
+            </a>
+          </li>
+        </ul>
+      </li>
       {{-- <li class="menu-item">
         <a href="/app/reports" class="menu-link">
           <i class="menu-icon tf-icons bx bx-home-circle"></i>

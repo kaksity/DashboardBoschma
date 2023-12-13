@@ -9,6 +9,7 @@ use App\Repositories\Implementations\LgaRepositoryImplementation;
 use App\Repositories\Implementations\MaritalStatusRepositoryImplementation;
 use App\Repositories\Implementations\MessageRepositoryImplementation;
 use App\Repositories\Implementations\NewsRepositoryImplementation;
+use App\Repositories\Implementations\NumberOfImpactRepositoryImplementation;
 use App\Repositories\Implementations\WardRepositoryImplementation;
 use App\Repositories\Interfaces\CategoryRepositoryInterface;
 use App\Repositories\Interfaces\EnrollmentRepositoryInterface;
@@ -17,6 +18,7 @@ use App\Repositories\Interfaces\LgaRepositoryInterface;
 use App\Repositories\Interfaces\MaritalStatusRepositoryInterface;
 use App\Repositories\Interfaces\MessageRepositoryInterface;
 use App\Repositories\Interfaces\NewsRepositoryInterface;
+use App\Repositories\Interfaces\NumberOfImpactRepositoryInterface;
 use App\Repositories\Interfaces\WardRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
@@ -37,6 +39,7 @@ class RepositoryProvider extends ServiceProvider
         $this->app->bind(MaritalStatusRepositoryInterface::class, MaritalStatusRepositoryImplementation::class);
         $this->app->bind(MessageRepositoryInterface::class, MessageRepositoryImplementation::class);
         $this->app->bind(NewsRepositoryInterface::class, NewsRepositoryImplementation::class);
+        $this->app->bind(NumberOfImpactRepositoryInterface::class, NumberOfImpactRepositoryImplementation::class);
     }
 
     /**

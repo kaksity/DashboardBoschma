@@ -10,6 +10,7 @@ use App\Http\Controllers\WebApp\MessagesController;
 use App\Http\Controllers\WebApp\NewsController;
 use App\Http\Controllers\Website\HomeController;
 use App\Http\Controllers\WebApp\ReportsController;
+use App\Http\Controllers\WebApp\Website\NumberOfImpactsController;
 use App\Http\Controllers\Website\AboutUsController;
 use App\Http\Controllers\Website\ContactUsController;
 use App\Http\Controllers\Website\NetworksController;
@@ -26,7 +27,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::domain('app.boschma.bo.gov.ng')->group(function () {
+// Route::domain('app.boschma.bo.gov.ng')->group(function () {
+Route::group(['prefix' => 'admin'],function () {
     Route::get('/', function () {
         return redirect()->route('webapp.dashboards.index');
     });
@@ -70,7 +72,13 @@ Route::domain('app.boschma.bo.gov.ng')->group(function () {
                 'delete' => 'webapp.news.delete',
             ]
         ]);
-    });
+        Route::resource('/website/number-of-impacts', NumberOfImpactsController::class, [
+            'names' => [
+                'index' => 'webapp.website.number-of-impacts.index',
+                'store' => 'webapp.website.number-of-impacts.store',
+            ]
+        ]);
+});
 
     Route::group(['prefix' => 'auth'], function () {
         Route::get('/login', [LoginController::class, 'index'])->name('login');
